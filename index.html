@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Vivin Mathew, Salesforce Solution Architect in Burnaby, BC. 10+ years of enterprise Salesforce, 7 architect certifications.">
+<meta property="og:title" content="Vivin Mathew · Salesforce Solution Architect">
+<meta property="og:description" content="10+ years designing Salesforce solutions across Sales, Service and Experience Cloud.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2312212E'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='15' fill='%23F0A54A' text-anchor='middle'%3EVM%3C/text%3E%3C/svg%3E">
+<title>Vivin Mathew</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: drafting-sheet. A sticky identity column on the left, a release-tagged career ledger on the right, then the certification tree. */
+:root {
+  --paper: #F3F6F7;
+  --sheet: #FFFFFF;
+  --ink: #12212E;
+  --ink-soft: #4A5B69;
+  --rule: #D5DEE3;
+  --grid: rgba(30, 80, 110, 0.06);
+  --accent: #1F5F8B;
+  --marker: #B8650A;
+  --marker-bg: #FBEBD6;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0D1A24; --sheet: #12232F; --ink: #E4ECF0; --ink-soft: #9DB0BD;
+    --rule: #22394A; --grid: rgba(140, 200, 230, 0.05); --accent: #7DB8E0;
+    --marker: #F0A54A; --marker-bg: #3A2A14; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0D1A24; --sheet: #12232F; --ink: #E4ECF0; --ink-soft: #9DB0BD;
+  --rule: #22394A; --grid: rgba(140, 200, 230, 0.05); --accent: #7DB8E0;
+  --marker: #F0A54A; --marker-bg: #3A2A14; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--ink);
+  font: 400 16px/1.6 var(--body);
+  padding-inline: 20px;
+  padding-block: 0;
+}
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--marker); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.label {
+  font: 500 12px/1.4 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 56px 72px; display: grid; gap: 56px; }
+
+/* Header */
+.top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: end; border-bottom: 2px solid var(--ink); padding-bottom: 28px; }
+.top h1 { font-size: clamp(44px, 8vw, 88px); font-weight: 700; line-height: 0.95; letter-spacing: -0.02em; }
+.top .role { margin-top: 14px; font: 500 clamp(18px, 2.4vw, 24px)/1.3 var(--display); color: var(--accent); }
+.top .api { font: 400 13px/1.5 var(--mono); color: var(--ink-soft); text-align: right; }
+.top .api b { color: var(--ink); font-weight: 500; }
+
+/* Two-column body */
+.cols { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 56px; align-items: start; }
+aside { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); display: grid; gap: 32px; }
+aside .summary { font-size: 15px; color: var(--ink-soft); }
+.contact { display: grid; gap: 10px; }
+.email { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.email code { font: 500 14px var(--mono); color: var(--ink); user-select: all; word-break: break-all; }
+.copy {
+  font: 500 12px var(--mono); color: var(--accent); background: transparent;
+  border: 1px solid var(--rule); border-radius: 4px; padding: 3px 8px; cursor: pointer;
+}
+.copy:hover { border-color: var(--accent); }
+.place { font-size: 14px; color: var(--ink-soft); }
+
+.figures { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 16px; border-top: 1px solid var(--rule); padding-top: 24px; }
+.figures div { display: grid; gap: 2px; }
+.figures strong { font: 700 30px/1 var(--display); font-variant-numeric: tabular-nums; }
+.figures span { font-size: 13px; color: var(--ink-soft); line-height: 1.35; }
+
+.skills { display: flex; flex-wrap: wrap; gap: 6px; border-top: 1px solid var(--rule); padding-top: 24px; }
+.skills .label { width: 100%; margin-bottom: 6px; }
+.skills span { font: 400 12.5px/1 var(--mono); padding: 6px 8px; border: 1px solid var(--rule); border-radius: 3px; background: var(--sheet); }
+
+/* Ledger */
+.ledger { display: grid; gap: 0; min-width: 0; }
+.ledger > .label { margin-bottom: 12px; }
+.job { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 28px; padding-block: 32px; border-top: 1px solid var(--rule); }
+.job:first-of-type { border-top: 2px solid var(--ink); }
+.when { display: grid; gap: 8px; align-content: start; }
+.when .dates { font: 500 14px/1.4 var(--mono); font-variant-numeric: tabular-nums; }
+.release {
+  justify-self: start; font: 500 11.5px/1.3 var(--mono); color: var(--marker);
+  background: var(--marker-bg); padding: 4px 7px; border-radius: 3px;
+}
+.what { display: grid; gap: 14px; min-width: 0; }
+.what h3 { font-size: 24px; font-weight: 700; line-height: 1.2; }
+.what .org { font-size: 15px; color: var(--ink-soft); }
+.what .org b { color: var(--accent); font-weight: 600; }
+.what ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; max-width: 68ch; }
+.what li::marker { color: var(--accent); }
+.hl { background: var(--marker-bg); color: var(--ink); padding: 0 3px; border-radius: 2px; font-weight: 500; }
+.stack { display: flex; flex-wrap: wrap; gap: 6px 14px; font: 400 12.5px var(--mono); color: var(--ink-soft); }
+
+/* Certifications */
+.certs { display: grid; gap: 28px; border-top: 2px solid var(--ink); padding-top: 28px; }
+.certs-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.certs h2 { font-size: clamp(28px, 4vw, 40px); }
+.certs-head p { max-width: 52ch; color: var(--ink-soft); font-size: 15px; }
+.trees { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.tree { background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 22px; display: grid; gap: 18px; }
+.tree h3 { font-size: 20px; display: flex; gap: 10px; align-items: center; }
+.tree h3::before { content: ""; width: 10px; height: 10px; background: var(--marker); transform: rotate(45deg); flex: none; }
+.tree ul { list-style: none; margin: 0; padding: 0 0 0 18px; border-left: 1px solid var(--accent); display: grid; gap: 10px; }
+.tree li { position: relative; font-size: 15px; }
+.tree li::before { content: ""; position: absolute; left: -18px; top: 0.8em; width: 12px; border-top: 1px solid var(--accent); }
+.others { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.others div { display: grid; gap: 10px; align-content: start; }
+.others ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.others li { font-size: 14px; padding: 5px 10px; border: 1px solid var(--rule); border-radius: 3px; background: var(--sheet); }
+
+footer { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font: 400 13px var(--mono); color: var(--ink-soft); border-top: 1px solid var(--rule); padding-top: 20px; }
+
+@media (max-width: 900px) {
+  .cols { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  aside { position: static; }
+  .trees, .others { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  body { padding-inline: 16px; }
+  .wrap { padding-block: 36px 48px; gap: 40px; }
+  .top { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .top .api { text-align: left; }
+  .job { grid-template-columns: minmax(0, 1fr); gap: 14px; padding-block: 26px; }
+  .when { grid-auto-flow: column; justify-content: start; align-items: center; gap: 12px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .job { animation: rise 0.5s ease-out both; }
+  .job:nth-of-type(2) { animation-delay: 0.05s; }
+  .job:nth-of-type(3) { animation-delay: 0.1s; }
+  .job:nth-of-type(4) { animation-delay: 0.15s; }
+  .job:nth-of-type(5) { animation-delay: 0.2s; }
+  @keyframes rise { from { transform: translateY(8px); } to { transform: none; } }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Vivin Mathew</h1>
+      <p class="role">Salesforce Solution Architect</p>
+    </div>
+    <p class="api">Building on the platform since<br><b>Winter ’15</b> · API v32.0</p>
+  </header>
+
+  <div class="cols">
+    <aside>
+      <p class="summary">I design end-to-end Salesforce solutions across Sales, Service and Experience Cloud: data models, sharing and security, API integrations and automation that stays maintainable. I own the architecture and still write the Apex and Lightning Web Components myself.</p>
+
+      <div class="contact">
+        <span class="label">Contact</span>
+        <div class="email">
+          <a href="mailto:mathew.vivin@gmail.com"><code id="email">mathew.vivin@gmail.com</code></a>
+          <button class="copy" id="copy-email" type="button">Copy</button>
+        </div>
+        <span class="place">Burnaby, British Columbia, Canada</span>
+      </div>
+
+      <div class="figures">
+        <div><strong>10+</strong><span>years of enterprise Salesforce</span></div>
+        <div><strong>7</strong><span>architect credentials</span></div>
+        <div><strong>60k+</strong><span>applicants a year on a portal I led</span></div>
+        <div><strong>40+</strong><span>countries served by a CRM I built</span></div>
+      </div>
+
+      <div class="skills">
+        <span class="label">Core expertise</span>
+        <span>Solution design</span><span>Data modeling</span><span>Sharing &amp; security</span>
+        <span>REST / SOAP</span><span>MuleSoft</span><span>Apex</span><span>LWC</span>
+        <span>Flow</span><span>OmniStudio</span><span>Platform Events</span><span>CDC</span>
+        <span>Data migration</span><span>SFDX</span><span>Git</span><span>Gearset</span>
+        <span>OAuth 2.0</span><span>SAML</span><span>Agile / SAFe</span>
+      </div>
+    </aside>
+
+    <main class="ledger">
+      <span class="label">Experience · tagged by Salesforce release</span>
+
+      <article class="job">
+        <div class="when">
+          <span class="dates">2021.02 – now</span>
+          <span class="release">Spring ’21 → Winter ’27</span>
+        </div>
+        <div class="what">
+          <div>
+            <h3>Salesforce Solution Architect</h3>
+            <p class="org"><b>RGP</b> (Resources Global Professionals) · Remote, USA</p>
+          </div>
+          <ul>
+            <li>Own architecture and delivery for the Sales Cloud platform as the <span class="hl">sole in-house Salesforce technical resource</span>: design, build, integrations and production releases.</li>
+            <li>Turn recruiting, HR and operations needs into solutions covering candidate sourcing, consultant profiles, skills and availability, opportunities and placement.</li>
+            <li>Designed custom data models for consultant profiles, skills, placement history and client relationships across regions and business units.</li>
+            <li>Built REST integrations with external HR and talent systems to sync candidate data and cut manual entry.</li>
+            <li>Designed role hierarchies, sharing rules and permission sets for regional visibility while protecting sensitive data.</li>
+            <li>Ship through Gearset across dev, UAT and production, holding <span class="hl">90%+ Apex test coverage</span> and reviewing each seasonal release for impact.</li>
+          </ul>
+          <div class="stack"><span>Sales Cloud</span><span>Batch &amp; Queueable Apex</span><span>LWC</span><span>REST</span><span>Gearset</span></div>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when">
+          <span class="dates">2019.11 – 2021.12</span>
+          <span class="release">Winter ’20 → Winter ’22</span>
+        </div>
+        <div class="what">
+          <div>
+            <h3>Lead Salesforce Developer / Solution Architect</h3>
+            <p class="org"><b>University of British Columbia</b> · Vancouver, BC</p>
+          </div>
+          <ul>
+            <li>Sole technical lead for the Experience Cloud Future Student Portal, supporting recruitment for <span class="hl">60,000+ prospective undergraduates a year</span>.</li>
+            <li>Architected secure, bidirectional REST integrations with the Personal Information Repository using Named Credentials and OAuth 2.0.</li>
+            <li>Designed LWC interfaces, Apex controllers and Experience Cloud layouts for applicant self-service, recruiter workflows and event registration.</li>
+            <li>Implemented Flows, scheduled Apex and Platform Events for applicant updates; set up duplicate rules, validation and field history for data integrity.</li>
+            <li>Ran SFDX and Bitbucket releases and worked with security and privacy teams on FIPPA compliance.</li>
+          </ul>
+          <div class="stack"><span>Experience Cloud</span><span>Named Credentials</span><span>Platform Events</span><span>SFDX</span><span>FIPPA</span></div>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when">
+          <span class="dates">2016.05 – 2019.11</span>
+          <span class="release">Spring ’16 → Winter ’20</span>
+        </div>
+        <div class="what">
+          <div>
+            <h3>Lead Salesforce Developer / Solution Architect</h3>
+            <p class="org"><b>Ritchie Bros. Auctioneers</b> · Vancouver, BC</p>
+          </div>
+          <ul>
+            <li>Delivered Salesforce solutions for global marketing, consignment contracting and asset lifecycle operations across <span class="hl">40+ countries</span>.</li>
+            <li>Designed the Salesforce-to-SAP integration over REST and MuleSoft to sync customer, contract and financial data.</li>
+            <li>Built Apex, batch jobs, Visualforce and Sales Cloud features for contracts, commissions, territory assignment and reporting.</li>
+            <li>Led the legacy CRM data migration and <span class="hl">cut batch failures by 60%</span> through SOQL optimization and batch chunking.</li>
+          </ul>
+          <div class="stack"><span>SAP</span><span>MuleSoft</span><span>Visualforce</span><span>Data Loader</span><span>SAFe</span></div>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when">
+          <span class="dates">2014.10 – 2016.05</span>
+          <span class="release">Winter ’15 → Spring ’16</span>
+        </div>
+        <div class="what">
+          <div>
+            <h3>Salesforce Developer and Consultant</h3>
+            <p class="org"><b>AOT Technologies</b> · Chennai, India</p>
+          </div>
+          <ul>
+            <li>Took Salesforce implementations from requirements to go-live for public sector, education and technology clients.</li>
+            <li>Configured Sales and Service Cloud data models, record types, assignment and escalation rules; wrote Apex, Visualforce and approval logic.</li>
+            <li>Integrated ERP and legacy databases over REST and SOAP, and trained users after launch.</li>
+          </ul>
+          <div class="stack"><span>Service Cloud</span><span>SOAP</span><span>Visualforce</span></div>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when">
+          <span class="dates">2007.01 – 2014.09</span>
+          <span class="release">Before the platform</span>
+        </div>
+        <div class="what">
+          <div>
+            <h3>Programmer Analyst</h3>
+            <p class="org"><b>Bank of America</b> · Chennai, India</p>
+          </div>
+          <ul>
+            <li>Built and supported banking applications in SQL Server, SSIS, SSRS and C#/.NET, including ETL pipelines and regulatory reports.</li>
+            <li>Tuned queries and indexes to <span class="hl">cut report generation time by up to 50%</span>.</li>
+            <li>Contributed Salesforce CRM configuration for retail banking customer service teams.</li>
+          </ul>
+          <div class="stack"><span>SQL Server</span><span>SSIS / SSRS</span><span>C# / .NET</span></div>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <section class="certs" aria-labelledby="certs-title">
+    <div class="certs-head">
+      <h2 id="certs-title">Certifications</h2>
+      <p>Salesforce’s two architect credentials are each earned by passing a set of designer exams. Here is how mine fit together.</p>
+    </div>
+    <div class="trees">
+      <div class="tree">
+        <h3>Application Architect</h3>
+        <ul>
+          <li>Data Architect</li>
+          <li>Sharing &amp; Visibility Architect</li>
+          <li>Platform Developer I</li>
+          <li>Platform App Builder</li>
+        </ul>
+      </div>
+      <div class="tree">
+        <h3>System Architect</h3>
+        <ul>
+          <li>Integration Architect</li>
+          <li>Identity &amp; Access Management Architect</li>
+          <li>Development Lifecycle &amp; Deployment Architect</li>
+          <li>Platform Developer I</li>
+        </ul>
+      </div>
+    </div>
+    <div class="others">
+      <div>
+        <span class="label">Development &amp; platform</span>
+        <ul><li>Platform Developer II</li><li>Administrator</li><li>Force.com Developer</li></ul>
+      </div>
+      <div>
+        <span class="label">Also certified</span>
+        <ul><li>Revenue Cloud Consultant</li><li>Agentforce Specialist</li><li>Anthropic Claude 101</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>B.E. Computer Engineering · Anna University, Chennai</span>
+    <span>Burnaby, BC</span>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('copy-email').addEventListener('click', function () {
+    var btn = this, text = document.getElementById('email').textContent;
+    function selectIt() {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('email'));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Selected';
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () { btn.textContent = 'Copied'; }, selectIt);
+    } catch (e) { selectIt(); }
+    setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
+  });
+</script>
+</body>
+</html>
